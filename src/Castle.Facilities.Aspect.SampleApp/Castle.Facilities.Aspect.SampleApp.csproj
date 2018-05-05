@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <StartupObject>Castle.Facilities.Aspect.SampleApp.Program</StartupObject>
+    <AssemblyName>Castle.Facilities.Aspect.SampleApp</AssemblyName>
+    <RootNamespace>Castle.Facilities.Aspect.SampleApp</RootNamespace>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Castle.Facilities.Aspect\Castle.Facilities.Aspect.csproj" />
+  </ItemGroup>
+</Project>
