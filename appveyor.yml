@@ -1,0 +1,24 @@
+version: 'buildnumber.{build}'
+
+image: Visual Studio 2017
+
+configuration: Release
+
+platform: Any CPU
+
+before_build:
+  # Display .NET Core version
+  - cmd: dotnet --version
+  # Display minimal restore text
+  - cmd: dotnet restore ./src/CastleAspectFacility.sln
+
+build_script:
+  - cmd: dotnet build ./src/CastleAspectFacility.sln  --configuration Release
+  - cmd: dotnet pack ./src/CastleAspectFacility.sln  --configuration Release
+
+test_script:
+  - cmd: dotnet test ./src/Castle.Facilities.Aspect.Tests/Castle.Facilities.Aspect.Tests.csproj
+  
+artifacts:
+  - path: '**\*.nupkg'
+    type: 'NuGetPackage'
