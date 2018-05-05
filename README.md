@@ -15,24 +15,24 @@ The Aspect Castle Facility uses a declarative approach to register interceptors 
 Consider the following example. [(inspired from AOP introduction of Castle Windsor)](https://github.com/castleproject/Windsor/blob/master/docs/orphan-introduction-to-aop-with-castle.md)
 ```csharp
 public interface ISomething
-{
-    int Augment(Int32 input);
-    void DoSomething(String input);
-}
+    {
+        int Augment(Int32 input);
+        void DoSomething(String input);
+    }
 
 class Something : ISomething
-{
-    [Log]
-    public int Augment(int input)
     {
-        return input + 1;
-    }
+        [Log]
+        public int Augment(int input)
+        {
+            return input + 1;
+        }
 
-    public void DoSomething(string input)
-    {
-        Console.WriteLine("I'm doing something: " + input);
+        public void DoSomething(string input)
+        {
+            Console.WriteLine("I'm doing something: " + input);
+        }
     }
-}
 ```
 
 Instead of calling for `.Interceptors()` while registering the component :
@@ -49,7 +49,7 @@ container.Register(
 		.Interceptors(InterceptorReference.ForKey("myinterceptor")).Anywhere);
 ```
 
-You can declaratively intercept methods :
+You can declaratively intercept method calls :
 
 ```csharp
     var container = new WindsorContainer();
@@ -71,6 +71,24 @@ As you can verify the actual implementation of the interceptor is in the LogAdvi
 
 This example certifies a couple of things, the first is component registration has been decoupled from Aspect declaration, the other one is that once you remove the `LogAttribute`, no proxy objects would be created by Castle `DynamicProxy` and it is not required to change the component registration section anymore.
 
+Here are the simple implementation of the LogAdvice and LogAttribute classes :
+
+```csharp
+ [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
+ public sealed class LogAttribute : Attribute
+ {
+ }
+
+class LogAdvice : AttributeInterceptor<LogAttribute>
+    {
+        protected override void InnerIntercept(IInvocation invocation)
+        {
+            Console.WriteLine($"interceptor called before '{invocation.Method.Name}'");
+            invocation.Proceed();
+            Console.WriteLine($"interceptor called after '{invocation.Method.Name}'");
+        }
+    }
+```
 
 ## NuGet Package
 * https://www.nuget.org/packages/Castle.Facilities.Aspect/ [![NuGet](https://img.shields.io/nuget/v/Castle.Facilities.Aspect.svg)](https://www.nuget.org/packages/Castle.Facilities.Aspect/)
