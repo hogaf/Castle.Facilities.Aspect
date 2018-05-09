@@ -9,7 +9,7 @@
     <PackageId>Castle.Facilities.Aspect</PackageId>
     <Title>Castle Windsor Aspect facility</Title>
     <Description>A minimalistic Aspect Oriented Pointcut approach for Castle DynamicProxy.</Description>
-    <PackageTags>castle, windsor, aspect, pointcut</PackageTags>
+    <PackageTags>castle, AOP, aspect, pointcut, proxy, dynamicproxy</PackageTags>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <AssemblyName>Castle.Facilities.Aspect</AssemblyName>
     <RootNamespace>Castle.Facilities.Aspect</RootNamespace>

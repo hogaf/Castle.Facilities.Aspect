@@ -8,6 +8,11 @@ using Castle.MicroKernel;
 
 namespace Castle.Facilities.Aspect
 {
+    /// <summary>
+    /// a predefined pointcut declaration to intercept methods decorated with of an attribute
+    /// </summary>
+    /// <typeparam name="T">The attribute type to check</typeparam>
+    /// <typeparam name="TInterceptor">The actual implementation of the interceptor to apply</typeparam>
     public class AttributePointcut<T, TInterceptor> : BasePointcut<TInterceptor>
         where T : Attribute
         where TInterceptor : class, IInterceptor

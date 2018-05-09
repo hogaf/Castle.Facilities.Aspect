@@ -1,4 +1,4 @@
-# Aspect Castle Facility [![Build status](https://ci.appveyor.com/api/projects/status/8h0yrxi8ry914p7p?svg=true)](https://ci.appveyor.com/project/hogaf/castle-facilities-aspect)
+# Aspect Castle Facility [![Build status](https://ci.appveyor.com/api/projects/status/8h0yrxi8ry914p7p?svg=true)](https://ci.appveyor.com/project/hogaf/castle-facilities-aspect) [![NuGet](https://img.shields.io/nuget/v/Castle.Facilities.Aspect.svg)](https://www.nuget.org/packages/Castle.Facilities.Aspect/)
 
 
 ## Introduction
@@ -90,5 +90,17 @@ class LogAdvice : AttributeInterceptor<LogAttribute>
     }
 ```
 
+Predefined pointcuts implemented already are:
+* AttributePointcut
+* InheritancePointcut
+
+Please look at the sample project for how to use the facility.
+
+## Roadmap
+* Conducting more predefined pointcuts.
+
+## Contribution
+Comments, contributions and patches are greatly appreciated.
+
 ## NuGet Package
-* https://www.nuget.org/packages/Castle.Facilities.Aspect/ [![NuGet](https://img.shields.io/nuget/v/Castle.Facilities.Aspect.svg)](https://www.nuget.org/packages/Castle.Facilities.Aspect/)
+* https://www.nuget.org/packages/Castle.Facilities.Aspect/

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Castle.MicroKernel;
 using Castle.MicroKernel.Facilities;
 using Castle.MicroKernel.Registration;
@@ -8,7 +7,7 @@ using Castle.MicroKernel.Registration;
 namespace Castle.Facilities.Aspect
 {
     /// <summary>
-    /// Castle facility for Aspect
+    /// Castle facility to declare pointcuts and advices
     /// </summary>
     /// <seealso cref="Castle.MicroKernel.Facilities.AbstractFacility" />
     public class AspectFacility : AbstractFacility
@@ -27,6 +26,11 @@ namespace Castle.Facilities.Aspect
             }
         }
 
+        /// <summary>
+        /// Adds pointcuts directly
+        /// </summary>
+        /// <param name="instanceCreator">Callback function to register a pointcut instance</param>
+        /// <returns></returns>
         public AspectFacility AddAspect(Func<IKernel, IPointcut> instanceCreator)
         {
             Registrations.Add(instanceCreator);
