@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net452;net461;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>net45;netstandard2.0</TargetFrameworks>
     <IsPackable>true</IsPackable>
   </PropertyGroup>
 
@@ -13,8 +13,8 @@
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <AssemblyName>Castle.Facilities.Aspect</AssemblyName>
     <RootNamespace>Castle.Facilities.Aspect</RootNamespace>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
     <Authors>hogaf</Authors>
     <Copyright></Copyright>
     <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0.html</PackageLicenseUrl>
@@ -22,7 +22,7 @@
     <RepositoryUrl>https://github.com/hogaf/Castle.Facilities.Aspect</RepositoryUrl>
     <PackageIconUrl></PackageIconUrl>
     <RepositoryType>GitHub</RepositoryType>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Product>Castle.Facilities.Aspect</Product>
   </PropertyGroup>
@@ -30,8 +30,6 @@
   <ItemGroup>
     <PackageReference Include="Castle.Core" version="4.2.1" />
     <PackageReference Include="Castle.Windsor" version="4.1.0" />
-    <PackageReference Include="Common.Logging" version="3.4.1" />
-    <PackageReference Include="Common.Logging.Core" version="3.4.1" />
     <PackageReference Include="Microsoft.CSharp" version="4.4.1" />
   </ItemGroup>
 </Project>
